@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: #0d6efd;
+            margin-bottom: 0;
+        }
+        .error-message {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .error-icon {
+            font-size: 80px;
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="bi bi-calendar-check me-2"></i>Бронирование комнат</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house me-1"></i>Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my-bookings" id="my-bookings-link"><i class="bi bi-calendar me-1"></i>Мои бронирования</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" id="profile-link"><i class="bi bi-person me-1"></i>Профиль</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="/login" id="login-link"><i class="bi bi-box-arrow-in-right me-1"></i>Войти</a>
+                    <a class="nav-link" href="/register" id="register-link"><i class="bi bi-person-plus me-1"></i>Регистрация</a>
+                    <a class="nav-link d-none" href="#" id="logout-link" onclick="logout()"><i class="bi bi-box-arrow-right me-1"></i>Выйти</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main>
+        <div class="container mt-4 fade-in">
+            <div class="error-container">
+                <i class="bi bi-exclamation-triangle error-icon"></i>
+                <h1 class="error-code">404</h1>
+                <p class="error-message">Страница не найдена</p>
+                <p class="mb-4">Запрашиваемая страница не существует или была перемещена.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/" class="btn btn-primary">
+                        <i class="bi bi-house me-2"></i>На главную
+                    </a>
+                    <button class="btn btn-outline-secondary" onclick="history.back()">
+                        <i class="bi bi-arrow-left me-2"></i>Назад
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Система бронирования переговорных комнат</h5>
+                    <p>© 2025 Все права защищены</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Контакты: <a href="mailto:support@example.com" class="text-white">support@example.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/auth.js"></script>
+    <script src="/static/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateAuthState();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+      network: host
+    restart: always
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: sqlite:///./meeting_rooms.db
+      SECRET_KEY: your-secure-secret-key-for-jwt-tokens
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
